@@ -11,7 +11,8 @@ Vue.use(VueFlashMessage, {
 })
 
 const vm = new Vue()
-const baseURL = 'https://random-game-archive-test.onrender.com'
+const base = 'https://random-game-archive-test.onrender.com'
+const baseURL = base + '/games/'
 
 const handleError = fn => (...params) =>
    fn(...params).catch(error => {
@@ -40,8 +41,8 @@ export const api = {
       return res.data
    }),
    downloadGame: handleError(async (id) => {
-      const res = await axios.get('http://localhost:4444/download/' + id)
-      window.open('http://localhost:4444/download/' + id);
+      const res = await axios.get(base+'/download/' + id)
+      window.open(base='/download/' + id);
       return res.data
    }),
 }
