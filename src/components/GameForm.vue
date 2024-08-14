@@ -55,7 +55,7 @@ export default {
         const formData = new FormData();
         formData.append('file', this.file);
         try {
-          await axios.post('http://localhost:4444/upload', formData);
+          await axios.post('https://random-game-archive-test.onrender.com/upload', formData);
           console.log(this.file.name);
           this.file = "";
         }
